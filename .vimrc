@@ -1,4 +1,4 @@
-" set column marker at the 76th character
+" set column marker at the 80th character
 if exists('+colorcolumn')
   set colorcolumn=80
 else
