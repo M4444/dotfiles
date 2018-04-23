@@ -8,6 +8,7 @@ endif
 " spell check
 setlocal spell spelllang=en_us
 map <F5> :setlocal spell! spelllang=en_us<CR>
+imap <F5> <C-O>:setlocal spell! spelllang=en_us<CR>
 
 " highlight search
 set hlsearch
@@ -26,3 +27,4 @@ set whichwrap+=<,h
 
 " set line numbers
 map <F2> :setlocal number!<CR>
+imap <F2> <C-O>:setlocal number!<CR>
