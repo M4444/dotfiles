@@ -28,3 +28,11 @@ set whichwrap+=<,h
 " set line numbers
 map <F2> :setlocal number!<CR>
 imap <F2> <C-O>:setlocal number!<CR>
+
+" basic commands for big (<Space> surrounded) words
+noremap ;diw T<Space>dt<Space>
+noremap ;daw T<Space>df<Space>
+noremap ;yiw T<Space>yt<Space>
+noremap ;yaw T<Space>yf<Space>
+noremap ;ciw T<Space>ct<Space>
+noremap ;caw T<Space>cf<Space>
