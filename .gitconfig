@@ -1,0 +1,16 @@
+[gui]
+	encoding = utf-8
+[gitreview]
+	remote = origin
+[core]
+	editor = vim
+[alias]
+	ls = branch
+
+	# LLVM commands
+	rev = "!r() { git log -1 "$1" | grep reviews.llvm.org | sed \"s/^[ \t]*//\"; }; r"
+	sn = "!s() { git log -1 "$1" | grep \"git-svn-id: https://llvm.org/svn/llvm-project/llvm/trunk@\" | cut -c62-67; }; s"
+	revinfo = "!sr() { git sn "$1"; git rev "$1"; }; sr"
+	findrev = "!fr() { git log --oneline --grep="$1"; }; fr"
+[color]
+	ui = auto
