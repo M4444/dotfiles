@@ -236,9 +236,9 @@ new_float none
 bindsym $mod+x border toggle
 
 # set keyboard layout
-bindsym $mod+KP_1 exec --no-startup-id setxkbmap us
-bindsym $mod+KP_2 exec --no-startup-id setxkbmap rs -variant alternatequotes
-bindsym $mod+KP_3 exec --no-startup-id setxkbmap rs -variant latin
+bindsym $mod+KP_1 exec --no-startup-id setxkbmap us && pkill -SIGRTMIN+4 i3blocks
+bindsym $mod+KP_2 exec --no-startup-id setxkbmap rs -variant alternatequotes && pkill -SIGRTMIN+4 i3blocks
+bindsym $mod+KP_3 exec --no-startup-id setxkbmap rs -variant latin && pkill -SIGRTMIN+4 i3blocks
 
 # set keyboard layout alternatives
 bindsym $mod+comma exec --no-startup-id setxkbmap us
