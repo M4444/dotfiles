@@ -36,3 +36,8 @@ noremap ;yiw T<Space>yt<Space>
 noremap ;yaw T<Space>yf<Space>
 noremap ;ciw T<Space>ct<Space>
 noremap ;caw T<Space>cf<Space>
+
+" aliases
+command OpenPDF !mupdf %:r.pdf &
+command LatexInit w | !pdflatex % && mupdf %:r.pdf &
+command Latex w | !pdflatex % && kill -SIGHUP $(pgrep -u $USER mupdf)
