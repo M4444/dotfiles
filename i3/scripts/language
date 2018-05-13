@@ -1,0 +1,19 @@
+#!/bin/bash
+# Displays the current language type of the keyboard
+
+LANGUAGE=$(setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}')
+
+case $LANGUAGE in
+	"us")
+		echo EN
+	;;
+	"rs(alternatequotes)")
+		echo СР
+	;;
+	"rs(latin)")
+		echo SR
+	;;
+	*)
+		echo ??
+	;;
+esac
