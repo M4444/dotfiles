@@ -41,3 +41,7 @@ noremap ;caw T<Space>cf<Space>
 command OpenPDF !mupdf %:r.pdf &
 command LatexInit w | !pdflatex % && mupdf %:r.pdf &
 command Latex w | !pdflatex % && kill -SIGHUP $(pgrep -u $USER mupdf)
+
+" clipboard support
+set clipboard=unnamedplus
+autocmd VimLeave * call system('echo -n ' . shellescape(getreg('+')) . ' | xclip -selection c')
