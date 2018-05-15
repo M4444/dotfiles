@@ -117,9 +117,13 @@ bindsym $mod+0 workspace $ws10
 
 # switch to next workspace
 bindsym Mod1+Right workspace next
+bindsym Mod1+Down workspace next
 bindsym Mod1+Left workspace prev
+bindsym Mod1+Up workspace prev
 bindsym Mod1+l workspace next
+bindsym Mod1+j workspace next
 bindsym Mod1+h workspace prev
+bindsym Mod1+k workspace prev
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
