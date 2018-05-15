@@ -134,7 +134,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="Chromium-browser"] $ws2
-#assign [class="Skype"] $ws9
+assign [class="Skype"] $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -206,7 +206,7 @@ for_window [window_role="gimp-toolbox"] floating disable; move left;
 #for_window [window_role="gimp-image-window"] resize grow width 50 px or 50ppt
 
 # skype setup
-for_window [window_role="ConversationsWindow"] floating disable;
+#for_window [window_role="ConversationsWindow"] floating disable;
 
 
 # open web browser
@@ -225,7 +225,7 @@ bindsym $mod+b exec --no-startup-id qutebrowser
 bindsym $mod+p exec --no-startup-id lxappearance
 
 # open skype
-bindsym $mod+s exec --no-startup-id skype
+bindsym $mod+s exec --no-startup-id skypeforlinux
 
 # open pavucontrol
 bindsym $mod+Shift+v exec --no-startup-id pavucontrol
