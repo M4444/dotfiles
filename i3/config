@@ -135,6 +135,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="Chromium-browser"] $ws2
 assign [class="Skype"] $ws9
+assign [window_role="i3-config"] $ws3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -213,7 +214,7 @@ for_window [window_role="gimp-toolbox"] floating disable; move left;
 bindsym $mod+c exec --no-startup-id $my_browser
 
 # open i3 config
-bindsym $mod+i exec --no-startup-id $my_terminal -e 'vim /home/mc/.config/i3/config'
+bindsym $mod+i exec --no-startup-id $my_terminal --role=i3-config -e 'vim /home/mc/.config/i3/config'
 
 # open file manager
 bindsym $mod+r exec --no-startup-id $my_terminal -e ranger
