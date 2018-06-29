@@ -19,3 +19,12 @@ alias get='sudo apt-get install'
 alias remove='sudo apt-get remove'
 alias purge='sudo apt-get purge'
 alias update='sudo apt-get update'
+
+# display information about the disks drives
+alias disks='ls -l /dev/disk/by-uuid/ && sudo fdisk -l'
+
+# display the weather forecast
+alias wttr='curl sr.wttr.in'
+
+# display the cheat sheet for a command
+alias cheat='ch() { curl cht.sh/$1; }; ch'
