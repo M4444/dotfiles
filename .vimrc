@@ -47,3 +47,11 @@ function! RepeatChar(char, count)
 endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+
+" enable syntax highlighting
+syntax enable
+
+" enable file searching
+filetype plugin on
+set path+=**
+set wildmenu
