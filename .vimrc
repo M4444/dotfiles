@@ -55,3 +55,11 @@ syntax enable
 filetype plugin on
 set path+=**
 set wildmenu
+
+" propper indentation of a new line
+set autoindent
+filetype plugin indent on
+imap <C-Return> <CR><CR><C-o>k<Tab>
+
+" switch files
+map <F8> <C-^>
