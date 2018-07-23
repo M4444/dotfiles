@@ -14,4 +14,4 @@
 	revinfo = "!sr() { git sn "$1"; git rev "$1"; }; sr"
 	findrev = "!fr() { git log --oneline --grep="$1"; }; fr"
 [color]
-	ui = auto
+	ui = always

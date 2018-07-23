@@ -1,3 +1,6 @@
+# wappers
+alias less='less -R'
+
 # display file size
 alias getsize='du -sh'
 
