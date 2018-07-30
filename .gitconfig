@@ -13,5 +13,6 @@
 	sn = "!s() { git log -1 "$1" | grep \"git-svn-id: https://llvm.org/svn/llvm-project/llvm/trunk@\" | cut -c62-67; }; s"
 	revinfo = "!sr() { git sn "$1"; git rev "$1"; }; sr"
 	findrev = "!fr() { git log --oneline --grep="$1"; }; fr"
+	lshow = "!git show --color=always | less -R"
 [color]
-	ui = always
+	ui = auto
