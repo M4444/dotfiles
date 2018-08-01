@@ -6,7 +6,8 @@
 	editor = vim
 [alias]
 	ls = branch
-	ll = log --oneline --graph --decorate
+	ll = log --oneline --decorate
+	tree=log --oneline --decorate --graph --all
 
 	lll  = "!lll() { git ll   --color=always $1 | less -R; }; lll"
 	llog  = "!ll() { git log  --color=always $1 | less -R; }; ll"
