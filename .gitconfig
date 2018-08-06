@@ -6,13 +6,16 @@
 	editor = vim
 [alias]
 	ls = branch
-	ll = log --oneline --decorate
-	tree=log --oneline --decorate --graph --all
+	l =      log --oneline --no-decorate
+	l-new =  log --oneline --no-decorate HEAD@{1}..HEAD
+	ll =     log --oneline --decorate
+	ll-new = log --oneline --decorate HEAD@{1}..HEAD
+	tree =   log --oneline --decorate --graph --all
 
-	lll  = "!lll() { git ll   --color=always $1 | less -R; }; lll"
-	llog  = "!ll() { git log  --color=always $1 | less -R; }; ll"
-	lshow = "!sl() { git show --color=always $1 | less -R; }; sl"
-	ldiff = "!dl() { git diff --color=always $1 | less -R; }; dl"
+	lll  = "!lll() { git ll   --color=always $@ | less -R; }; lll"
+	llog  = "!ll() { git log  --color=always $@ | less -R; }; ll"
+	lshow = "!sl() { git show --color=always $@ | less -R; }; sl"
+	ldiff = "!dl() { git diff --color=always $@ | less -R; }; dl"
 
 	# LLVM commands
 	rev = "!r() { git log -1 "$1" | grep reviews.llvm.org | sed \"s/^[ \t]*//\"; }; r"
