@@ -227,13 +227,19 @@ bindsym $mod+r exec --no-startup-id $my_terminal -e ranger
 bindsym $mod+b exec --no-startup-id qutebrowser
 
 # open lxappearance
-bindsym $mod+p exec --no-startup-id lxappearance
+bindsym $mod+Shitf+t exec --no-startup-id lxappearance
 
 # open skype
 bindsym $mod+s exec --no-startup-id skypeforlinux
 
 # open pavucontrol
 bindsym $mod+Shift+v exec --no-startup-id pavucontrol
+
+# open vlc
+bindsym $mod+p exec --no-startup-id vlc
+
+# open smplayer
+bindsym $mod+Shift+p exec --no-startup-id smplayer
 
 # set border
 new_window none
