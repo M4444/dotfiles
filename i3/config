@@ -241,6 +241,9 @@ bindsym $mod+p exec --no-startup-id vlc
 # open smplayer
 bindsym $mod+Shift+p exec --no-startup-id smplayer
 
+# open thunar
+bindsym $mod+t exec --no-startup-id thunar
+
 # set border
 new_window none
 new_float none
