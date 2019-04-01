@@ -63,3 +63,7 @@ imap <C-Return> <CR><CR><C-o>k<Tab>
 
 " switch files
 map <F8> <C-^>
+
+" set show tabs as ^I
+map <F3> :setlocal list!<CR>
+imap <F3> <C-O>:setlocal list!<CR>
