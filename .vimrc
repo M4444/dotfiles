@@ -13,9 +13,72 @@ imap <F6> <C-O>:setlocal spell! spelllang=en_us<CR>
 " highlight search
 set hlsearch
 
-" highlight trailing whitespaces
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
+highlight BadSpacing ctermbg=red guibg=red
+"let m = matchadd('BadSpacing', '  * ')
+" multiple spaces
+call matchadd('BadSpacing', '  * ')
+" no space between for, if, while, switch and (
+call matchadd('BadSpacing', '\(fo\zsr\|i\zsf\|whil\zse\|switc\zsh\)(')
+" no space between do and {
+call matchadd('BadSpacing', 'do{')
+" space after (
+call matchadd('BadSpacing', '( ')
+" space before )
+call matchadd('BadSpacing', ' )')
+" non space before {
+call matchadd('BadSpacing', '\S{')
+" non space or ; after }
+call matchadd('BadSpacing', '}[^ ;]')
+" no else or while after }
+call matchadd('BadSpacing', '} \(else\|while\)\@!')
+" space before ,
+call matchadd('BadSpacing', ' ,')
+" non space after ,
+call matchadd('BadSpacing', ',\S')
+" space before ;
+call matchadd('BadSpacing', '\s\ze;')
+" non space after ;
+call matchadd('BadSpacing', ';\S')
+
+" space before but not after assignment operator
+call matchadd('BadSpacing', '\s\(\|[*+-/%&|^]\|<<\|>>\)\?=\ze[^ =]')
+" space after but not before assignment operator
+call matchadd('BadSpacing', '[^ =!<>*+-/%&|^]\zs\([*+-/%&|^]\|<<\|>>\)\?=\s')
+" non space after and before assignment operators
+call matchadd('BadSpacing', '[^ =!<>*+-/%&|^]\zs\([*+-/%&|^]\|<<\|>>\)\?=\ze[^ =>]')
+" non space before assignment operators
+"call matchadd('BadSpacing', '[^ =!<>*+-/%&|^]\zs\([*+-/%&|^]\|<<\|>>\)\?=\ze[^=]')
+" non space after assignment operators
+"call matchadd('BadSpacing', '[^=!<>]\zs\([*+-/%&|^]\|<<\|>>\)\?=\ze[^ =>]')
+
+" space before but not after comparison operator
+call matchadd('BadSpacing', '\(include\s*\)\@<!\s\([<>]\|[=!<>]=\|<=>\)\ze[^ =<>]')
+" space after but not before comparison operator
+call matchadd('BadSpacing', '[^ <>=]\zs\([<>]\|[=!<>]=\|<=>\)\s')
+
+" empty lines at beginning of the file with optional whitespace
+call matchadd('BadSpacing', '\%^\(\n\s*\)\+')
+" consecutive empty lines with optional whitespace
+call matchadd('BadSpacing', '\n\zs\s*\(\n\s*\)\{2,\}')
+" empty lines at the end of the file with optional whitespace
+" WARNING: doesn't match the very last line
+call matchadd('BadSpacing', '^\(\n\s*\)\+\%$')
+
+" clear all matches
+map <F4> :call clearmatches()<CR>
+imap <F4> <C-O>:call clearmatches()<CR>
+
+highlight SpaceAfterTab ctermbg=blue guibg=blue
+call matchadd('SpaceAfterTab', '\t\+\zs \+')
+" tab at a non-starting place
+highlight RandomTab ctermbg=cyan guibg=cyan
+call matchadd('RandomTab', '^\s*\S\+[^\t]*\zs\t')
+
+highlight IndentSpace ctermbg=green guibg=green
+call matchadd('IndentSpace', '^ \+')
+
+highlight BadWhitespace ctermbg=red guibg=red
+call matchadd('BadWhitespace', '\s\+$')
 
 " new line without insert mode
 nmap <CR> o<Esc>
