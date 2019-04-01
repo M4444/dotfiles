@@ -7,8 +7,8 @@ endif
 
 " spell check
 setlocal spell spelllang=en_us
-map <F5> :setlocal spell! spelllang=en_us<CR>
-imap <F5> <C-O>:setlocal spell! spelllang=en_us<CR>
+map <F6> :setlocal spell! spelllang=en_us<CR>
+imap <F6> <C-O>:setlocal spell! spelllang=en_us<CR>
 
 " highlight search
 set hlsearch
