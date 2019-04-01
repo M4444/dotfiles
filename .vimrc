@@ -67,3 +67,7 @@ map <F8> <C-^>
 " set show tabs as ^I
 map <F3> :setlocal list!<CR>
 imap <F3> <C-O>:setlocal list!<CR>
+
+" refresh vim config
+map <F5> :so $MYVIMRC<CR>
+imap <F5> <C-O>:so $MYVIMRC<CR>
