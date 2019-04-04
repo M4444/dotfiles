@@ -5,17 +5,22 @@
 [core]
 	editor = vim
 [alias]
+	st = "!st() { echo; git branch; echo; [ ! -z \"$(git status -s)\" ] && git status $@; }; st"
+	cd = checkout
 	ls = branch
-	l =      log --oneline --no-decorate
-	l-new =  log --oneline --no-decorate HEAD@{1}..HEAD
-	ll =     log --oneline --decorate
+	l      = log --oneline --no-decorate
+	l-new  = log --oneline --no-decorate HEAD@{1}..HEAD
+	ll     = log --oneline --decorate
 	ll-new = log --oneline --decorate HEAD@{1}..HEAD
-	tree =   log --oneline --decorate --graph --all
+	tree   = log --oneline --decorate --graph --all
 
 	lll  = "!lll() { git ll   --color=always $@ | less -R; }; lll"
 	llog  = "!ll() { git log  --color=always $@ | less -R; }; ll"
 	lshow = "!sl() { git show --color=always $@ | less -R; }; sl"
 	ldiff = "!dl() { git diff --color=always $@ | less -R; }; dl"
+
+	blame-dates = "!bd() { git blame $GIT_PREFIX/$@ | grep -Eo '[0-9]{4}-.*:[0-9]{2}' | sort -ur; }; bd"
+	blame-list = "!bl() { git blame $GIT_PREFIX/$@ | sed 's/ +.*//g' | sort -u -k2; }; bl"
 
 	# LLVM commands
 	rev = "!r() { git log -1 "$1" | grep reviews.llvm.org | sed \"s/^[ \t]*//\"; }; r"
