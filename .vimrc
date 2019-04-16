@@ -44,8 +44,8 @@ call matchadd('BadSpacing', ';\S')
 call matchadd('BadSpacing', '\s\(\|[*+-/%&|^]\|<<\|>>\)\?=\ze[^ =]')
 " space after but not before assignment operator
 call matchadd('BadSpacing', '[^ =!<>*+-/%&|^]\zs\([*+-/%&|^]\|<<\|>>\)\?=\s')
-" non space after and before assignment operators
-call matchadd('BadSpacing', '[^ =!<>*+-/%&|^]\zs\([*+-/%&|^]\|<<\|>>\)\?=\ze[^ =>]')
+" non space before and after assignment operators
+call matchadd('BadSpacing', '[^ =!<>*+-/%&|^]\(operator\)\@<!\zs\([*+-/%&|^]\|<<\|>>\)\?=\ze[^ =>]')
 " non space before assignment operators
 "call matchadd('BadSpacing', '[^ =!<>*+-/%&|^]\zs\([*+-/%&|^]\|<<\|>>\)\?=\ze[^=]')
 " non space after assignment operators
@@ -54,7 +54,7 @@ call matchadd('BadSpacing', '[^ =!<>*+-/%&|^]\zs\([*+-/%&|^]\|<<\|>>\)\?=\ze[^ =
 " space before but not after comparison operator
 call matchadd('BadSpacing', '\(include\s*\)\@<!\s\([<>]\|[=!<>]=\|<=>\)\ze[^ =<>]')
 " space after but not before comparison operator
-call matchadd('BadSpacing', '[^ <>=]\zs\([<>]\|[=!<>]=\|<=>\)\s')
+call matchadd('BadSpacing', '\(<\w*\)\@<![^ <>=]\zs\([<>]\|[=!<>]=\|<=>\)\s')
 
 " empty lines at beginning of the file with optional whitespace
 call matchadd('BadSpacing', '\%^\(\n\s*\)\+')
