@@ -5,7 +5,7 @@
 [core]
 	editor = vim
 [alias]
-	st = "!st() { echo; git branch; echo; [ ! -z \"$(git status -s)\" ] && git status $@; }; st"
+	st = "!st() { echo; git stash list; git branch; echo; [ ! -z \"$(git status -s)\" ] && git status $@; }; st"
 	cd = checkout
 	ls = branch
 	l      = log --oneline --no-decorate
