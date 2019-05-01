@@ -202,6 +202,9 @@ exec --no-startup-id fluxgui
 # set wallpaper
 exec_always --no-startup-id feh --bg-max ~/.config/wall.png
 
+# start update-manager
+exec --no-startup-id update-manager
+
 # gimp setup
 #for_window [window_role="gimp-dock"]    floating disable; move left;  resize shrink width 50 px or 50ppt
 #for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow   width 30 px or 30ppt
