@@ -21,3 +21,5 @@ alias update='sudo apt-get update'
 
 # display information about the disks drives
 alias disks='ls -l /dev/disk/by-uuid/ && sudo fdisk -l'
+
+alias wallit='~/Pictures/wallit.sh'

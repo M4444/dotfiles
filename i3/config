@@ -200,7 +200,7 @@ exec --no-startup-id compton -f
 exec --no-startup-id fluxgui
 
 # set wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.config/wall.png
+exec_always --no-startup-id feh --bg-max ~/.config/wall.png
 
 # gimp setup
 #for_window [window_role="gimp-dock"]    floating disable; move left;  resize shrink width 50 px or 50ppt
