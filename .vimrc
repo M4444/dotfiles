@@ -18,21 +18,21 @@ highlight BadSpacing ctermbg=red guibg=red
 " multiple spaces
 call matchadd('BadSpacing', '  * ')
 " no space between for, if, while, switch and (
-call matchadd('BadSpacing', '\(fo\zsr\|i\zsf\|whil\zse\|switc\zsh\)(')
+call matchadd('BadSpacing', '\W\(fo\zsr\|i\zsf\|whil\zse\|switc\zsh\)(')
 " no space between do and {
 call matchadd('BadSpacing', 'do{')
-" space after (
-call matchadd('BadSpacing', '( ')
-" space before )
-call matchadd('BadSpacing', ' )')
+" whitespace after (
+call matchadd('BadSpacing', '(\s')
+" whitespace before )
+call matchadd('BadSpacing', '\s)')
 " non space before {
 call matchadd('BadSpacing', '\S{')
-" non space or ; after }
-call matchadd('BadSpacing', '}[^ ;]')
+" non space, comma or ; after }
+call matchadd('BadSpacing', '}[^ ,;]')
 " no else or while after }
-call matchadd('BadSpacing', '} \(else\|while\)\@!')
-" space before ,
-call matchadd('BadSpacing', ' ,')
+call matchadd('BadSpacing', '} \(else\|while\|catch\)\@!')
+" whitespace before ,
+call matchadd('BadSpacing', '\s,')
 " non space after ,
 call matchadd('BadSpacing', ',\S')
 " space before ;
