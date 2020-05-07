@@ -1,3 +1,31 @@
+# Deal with delete key in st
+tput smkx
+
+#COLOR_GREEN="\e[32m"
+COLOR_GREEN="\[\e[38;5;32m\]"
+COLOR_RED="\[\e[31m\]"
+COLOR_DIM="\[\e[2m\]"
+COLOR_DIM_OFF="\[\e[22m\]"
+COLOR_OFF="\[\e[39m\]"
+
+# If id command returns zero, you got root access.
+if [ $(id -u) -eq 0 ]; then
+# root
+	PS1="[$COLOR_RED\\u@\\h$COLOR_DIM:$COLOR_DIM_OFF\\w$COLOR_OFF]$ "
+else
+# normal user
+	PS1="[$COLOR_GREEN\\u@\\h$COLOR_DIM:$COLOR_DIM_OFF\\w$COLOR_OFF]$ "
+fi
+
+# General aliases
+alias ls="ls --color=always"
+alias grep="grep --color=always"
+
+# Enable custom aliases
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
 # ---------------- Custom functions ----------------
 
 # check if the last command was successful
