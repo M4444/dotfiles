@@ -28,6 +28,19 @@ fi
 
 # ---------------- Custom functions ----------------
 
+# Arch
+# search for a package
+function search_any()
+{
+	$1 --color=always -Ss $2 | rg -C999999 $2
+}
+
+# install a package
+function get_any()
+{
+	$1 --color=always -S $2
+}
+
 # check if the last command was successful
 function check()
 {
