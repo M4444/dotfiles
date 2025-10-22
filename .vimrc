@@ -6,7 +6,7 @@ else
 endif
 
 " spell check
-setlocal spell spelllang=en_us
+"setlocal spell spelllang=en_us
 map <F6> :setlocal spell! spelllang=en_us<CR>
 imap <F6> <C-O>:setlocal spell! spelllang=en_us<CR>
 

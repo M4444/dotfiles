@@ -1,3 +1,6 @@
+# Set LC_ALL
+export LC_ALL=en_US.UTF-8
+
 # Deal with delete key in st
 tput smkx
 
@@ -126,3 +129,5 @@ function checkdebug()
 		fi
 	done
 )
+
+. "$HOME/.cargo/env"
