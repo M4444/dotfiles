@@ -1,13 +1,13 @@
 #!/bin/bash
 # Displays the default device, volume, and mute status for i3blocks
 
-AUDIO_HIGH_SYMBOL='  '
+AUDIO_HIGH_SYMBOL='🔊  '
 
 AUDIO_MED_THRESH=50
-AUDIO_MED_SYMBOL='  '
+AUDIO_MED_SYMBOL='🔉  '
 
 AUDIO_LOW_THRESH=0
-AUDIO_LOW_SYMBOL='  '
+AUDIO_LOW_SYMBOL='🔈  '
 
 AUDIO_MUTED_SYMBOL='🔇  '
 

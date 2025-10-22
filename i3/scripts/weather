@@ -1,5 +1,54 @@
-#!/bin/sh
+#!/bin/bash
 
-URL='http://www.accuweather.com/en/rs/belgrade/298198/weather-forecast/298198'
+mapfile -t RESULT < <(curl -s wttr.in/?0T | cut -c17-)
 
-wget -q -O- "$URL" | awk -F\' '/acm_RecentLocationsCarousel\.push/{print $12"°C"}'| head -1
+TEMP=$(echo "${RESULT[3]}" | tr -s " ")
+
+case "${RESULT[2]}" in
+	"Cloudy" | "Partly cloudy" | "Overcast")
+	SYMBOL="☁️ "
+	;;
+
+	"Fog" | "Freezing fog" | "Mist")
+	SYMBOL="🌫 "
+	;;
+
+	"Heavy rain" | "Heavy rain at times" | "Moderate rain" | "Moderate rain at times" | "Moderate or heavy rain shower" | "Torrential rain shower" | "Heavy freezing drizzle" | "Moderate or heavy freezing rain" | "Freezing drizzle" | "Light freezing rain" | "Patchy freezing drizzle possible" | "Ice pellets" | "Light sleet" | "Light sleet showers" | "Patchy sleet possible" | "Moderate or heavy sleet" | "Moderate or heavy sleet showers")
+	SYMBOL="🌧 "
+	;;
+
+	"Heavy snow" | "Blowing snow" | "Moderate snow" | "Patchy heavy snow" | "Moderate or heavy snow showers" | "Blizzard")
+	SYMBOL="❄️ "
+	;;
+
+	"Light rain" | "Patchy rain possible" | "Patchy light rain" | "Patchy light drizzle" | "Light rain shower" | "Light drizzle")
+
+	SYMBOL="🌦 "
+	;;
+
+	"Light snow" | "Light snow showers" | "Patchy light snow" | "Patchy moderate snow")
+	SYMBOL="🌨 "
+	;;
+
+	"Partly cloudy")
+	SYMBOL="⛅ "
+	;;
+
+	"Sunny"| "Clear")
+	SYMBOL="☀️ "
+	;;
+
+	"Thundery outbreaks possible" | "Patchy light snow with thunder" | "Patchy light rain with thunder")
+	SYMBOL="🌩 "
+	;;
+
+	"Moderate or heavy rain with thunder" | "Moderate or heavy snow with thunder")
+	SYMBOL="⛈ "
+	;;
+
+	*)
+	SYMBOL="???"
+	;;
+esac
+
+echo "${TEMP}${SYMBOL}"
